@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-set -x
+# set -x
 
 . tools/env.sh
 
 PARTITION=$1
-JOB_NAME=$2
-CONFIG=$3
-CHECKPOINT=$4
-GPUS=${GPUS:-8}
-GPUS_PER_NODE=${GPUS_PER_NODE:-8}
-CPUS_PER_TASK=${CPUS_PER_TASK:-5}
-PY_ARGS=${@:5}
+JOB_NAME=dgs
+CONFIG=$2
+CHECKPOINT=$3
+GPUS=8
+GPUS_PER_NODE=8
+CPUS_PER_TASK=3
+PY_ARGS=${@:4}
 SRUN_ARGS=${SRUN_ARGS:-""}
 
 srun -p ${PARTITION} \
